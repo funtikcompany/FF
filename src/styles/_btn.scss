@@ -1,0 +1,118 @@
+.btn {
+    &-modification {
+        background-color: #FF7143;
+        border: 0;
+        padding: 20px 60px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 17px;
+        
+        @media (max-width:550px) {
+            padding: 15px 45px;
+        }
+
+        &:hover {
+            background-color:#FF7143
+        }
+
+        &--blue {
+            background: #5454D4;
+
+            &:hover {
+                background: #5454D4;
+            }
+        }
+    }
+
+    &-mobile {
+        @media (min-width:850px) {
+            display: none;
+        }
+    }
+
+    &-desk {
+        @media (max-width:850px) {
+            display: none;
+        }
+    }
+
+}
+
+.down {
+    border: 1px solid #E7E7E7;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 40px;
+
+   @media (max-width:600px) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.toggle-menu {
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    span {
+        font-size: 0px;
+        color: transparent;
+        height: 3px;
+        width: 23px;
+        background-color: #000;
+        border-radius: 23px;
+        display: block;
+        position: relative;
+        transition: all .2s linear;
+
+        &::after,&::before {
+            position: absolute;
+            content: "";
+            width: inherit;
+            height: inherit;
+            background-color: #000;
+            top: -0px;
+            left: 0;
+            border-radius: inherit;
+            transition: all .2s linear;
+        }
+
+        &::before {
+            top: -6px;
+        }
+        &::after {
+            top: 6px;
+        }
+    }
+
+    @media (max-width:850px) {
+        display: flex;
+    }
+
+    &.active {
+        span {
+            background-color: transparent;
+            width: 33px;
+            
+            &::before {
+                transform: rotateZ(-45deg);
+                opacity: 1 !important;
+                top: 0;
+            }
+
+            &::after {
+                transform: rotateZ(45deg);
+                opacity: 1 !important;
+                top: 0;
+            }
+        }
+    }
+}

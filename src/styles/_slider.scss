@@ -1,0 +1,18 @@
+.slider {
+    padding-top: 200px;
+
+    @media (max-width:600px) {
+        padding-top: 120px;
+    }
+}
+
+.swiper {
+    &-container {
+        overflow: hidden;
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
